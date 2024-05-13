@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ImageOverlayText: View {
+struct MovieItemText: View {
     var body: some View {
         ZStack{
             VStack(alignment: .leading){
@@ -18,12 +18,12 @@ struct ImageOverlayText: View {
                     Image(systemName: "movieclapper.fill")
                     Text("Movie")
                 }
-                Text("The Most interesting movie").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.bold)
-            }
+                Text("The Most interesting movie").font(.title3).fontWeight(.bold)
+            }.frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
 
 #Preview {
-    ImageOverlayText()
+    MovieItemText()
 }
