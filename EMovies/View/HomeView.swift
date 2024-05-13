@@ -9,9 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        VStack{
-            Text("Home")
-        }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color.black)
+        ScrollView{
+            VStack{
+                SearchComponent(screenPlaceholder: "Movies or Series")
+            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).padding()
+        }
     }
 }
 

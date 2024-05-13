@@ -9,7 +9,11 @@ import SwiftUI
 
 struct TvView: View {
     var body: some View {
-        Text("TV view")
+        ScrollView{
+            VStack{
+                SearchComponent(screenPlaceholder: "TV Series")
+            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).padding()
+        }
     }
 }
 

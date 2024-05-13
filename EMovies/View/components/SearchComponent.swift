@@ -11,10 +11,12 @@ struct SearchComponent: View {
     
     @StateObject var homeData = HomeViewModel()
     
+    let screenPlaceholder: String
+    
     var body: some View {
         HStack(spacing: 5){
             Image(systemName: "magnifyingglass")
-            TextField("Search for Movies or Tv Series", text: $homeData.searchQuery)
+            TextField("Search for \(screenPlaceholder)", text: $homeData.searchQuery)
             Button(action: search, label: {
                 Text("Search")
             }).buttonStyle(.borderedProminent)
@@ -27,5 +29,5 @@ struct SearchComponent: View {
 func search(){}
 
 #Preview {
-    SearchComponent()
+    SearchComponent(screenPlaceholder: "Movies or Series")
 }

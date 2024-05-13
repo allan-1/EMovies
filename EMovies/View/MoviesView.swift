@@ -9,7 +9,12 @@ import SwiftUI
 
 struct MoviesView: View {
     var body: some View {
-        Text("Movies")
+        ScrollView{
+            VStack{
+                SearchComponent(screenPlaceholder: "Movies")
+            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).padding()
+        }
+
     }
 }
 
