@@ -15,8 +15,8 @@ struct SearchComponent: View {
     
     var body: some View {
         HStack(spacing: 5){
-            Image(systemName: "magnifyingglass")
-            TextField("Search for \(screenPlaceholder)", text: $homeData.searchQuery)
+            Image(systemName: "magnifyingglass").foregroundStyle(.black)
+            TextField("", text: $homeData.searchQuery, prompt: Text("Search for \(screenPlaceholder)").foregroundStyle(.black)).foregroundStyle(.black)
             Button(action: search, label: {
                 Text("Search")
             }).buttonStyle(.borderedProminent)

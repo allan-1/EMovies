@@ -15,7 +15,7 @@ struct HomeView: View {
         ScrollView{
             VStack{
                 SearchComponent(screenPlaceholder: "Movies or Series")
-                TitleText(title: "Trending", mtype: "Movie").padding(.top, 26)
+                TitleText(title: "Trending", mtype: "Movie").padding(.top, 20)
                 ScrollView(.horizontal, showsIndicators: false){
                     if let trendingresults = homeViewModel.fetchedTrending{
                         if trendingresults.results.isEmpty{
@@ -32,7 +32,7 @@ struct HomeView: View {
                     }
                     
                 }
-                TitleText(title: "Popular", mtype: "Movie").padding(.top, 20)
+                TitleText(title: "Popular", mtype: "Movie").padding(.top, 10)
                 if let popularResults = homeViewModel.fetchedPopular{
                     if popularResults.results.isEmpty{
                         Text("Loading")
