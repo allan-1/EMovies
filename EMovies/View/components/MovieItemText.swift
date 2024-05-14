@@ -21,7 +21,7 @@ struct MovieItemText: View {
                     Image(systemName: "movieclapper.fill").foregroundStyle(.white)
                     Text(mediaType).foregroundStyle(.white)
                 }
-                Text(movieTitle).font(.title3).fontWeight(.bold).foregroundStyle(.white)
+                Text(movieTitle).font(.headline).fontWeight(.bold).foregroundStyle(.white)
             }.frame(maxWidth: .infinity, alignment: .leading)
         }
     }
