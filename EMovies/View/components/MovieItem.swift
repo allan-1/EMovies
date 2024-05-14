@@ -9,6 +9,11 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct MovieItem: View {
+    let releaseYear: String
+    let backdropPath: String
+    let movieTitle: String
+    let mediaType: String
+    
     var body: some View {
         VStack(alignment: .leading){
             WebImage(url: URL(string: "https://image.tmdb.org/t/p/original//lLh39Th5plbrQgbQ4zyIULsd0Pp.jpg")) { image in
@@ -16,11 +21,11 @@ struct MovieItem: View {
             } placeholder: {
                 Rectangle().foregroundColor(.gray)
             }
-            MovieItemText()
+            MovieItemText(releaseYear: releaseYear, movieTitle: movieTitle, mediaType: mediaType)
         }
     }
 }
 
-#Preview {
-    MovieItem()
-}
+//#Preview {
+//    MovieItem()
+//}

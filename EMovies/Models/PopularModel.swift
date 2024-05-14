@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Popular: Codable {
+struct PopularModel: Codable {
     let page: Int
     let results: [Results]
     let totalPages, totalResults: Int
