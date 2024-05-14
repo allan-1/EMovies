@@ -18,7 +18,7 @@ struct MovieItemText: View {
                     Image(systemName: "movieclapper.fill")
                     Text("Movie")
                 }
-                Text("The Most interesting movie").font(.title3).fontWeight(.bold)
+                Text("The planet of apes in the world").font(.title3).fontWeight(.bold)
             }.frame(maxWidth: .infinity, alignment: .leading)
         }
     }

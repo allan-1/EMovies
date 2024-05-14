@@ -15,8 +15,8 @@ struct TitleText: View {
     var body: some View {
         HStack(spacing: 12){
             Text(title).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            Text(mtype).padding(.all, 8).border(.black).fontWeight(.medium)
-        }
+            Text(mtype).padding(.all, 8).border(.gray).fontWeight(.medium)
+        }.frame(maxWidth: .infinity, alignment: .leading)
         
     }
 }
