@@ -10,12 +10,10 @@ import Foundation
 class HomeViewModel: ObservableObject{
     
     @Published var searchQuery = ""
-    
     @Published var fetchedTrending: TrendingModel? = nil
-    
     @Published var fetchedPopular: PopularModel? = nil
-    
     @Published var fetchedMovieGenre: GenreModel? = nil
+    @Published var fetchedTvGenres: GenreModel? = nil
     
     //MARK: - Get Trending Movies
     func getTrending(){
@@ -122,11 +120,49 @@ class HomeViewModel: ObservableObject{
             }
             
             do{
-                print("Response here")
                 let movieGenre = try JSONDecoder().decode(GenreModel.self, from: responseData)
-                print(movieGenre)
                 DispatchQueue.main.async {
                     self.fetchedMovieGenre = movieGenre
+                }
+            }catch{
+                print("error: \(error.localizedDescription)")
+            }
+        }.resume()
+    }
+    
+    func getTvGenre(){
+        
+        let urlString = "https://api.themoviedb.org/3/genre/tv/list?language=en"
+        
+        
+        guard let apiUrl = URL(string: urlString) else{
+            print("Invalid URL")
+            return
+        }
+        
+        var request = URLRequest(url: apiUrl)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(bearerToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let session = URLSession(configuration: .default)
+        
+        session.dataTask(with: request){
+            (data, response, error) in
+            if let error = error{
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let responseData = data else{
+                print("No data recieved")
+                return
+            }
+            
+            do{
+                let tvGenre = try JSONDecoder().decode(GenreModel.self, from: responseData)
+                DispatchQueue.main.async {
+                    self.fetchedTvGenres = tvGenre
                 }
             }catch{
                 print("error: \(error.localizedDescription)")
