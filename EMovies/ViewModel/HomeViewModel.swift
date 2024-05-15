@@ -96,6 +96,7 @@ class HomeViewModel: ObservableObject{
         
         let urlString = "https://api.themoviedb.org/3/genre/movie/list?language=en"
         
+        
         guard let apiUrl = URL(string: urlString) else{
             print("Invalid URL")
             return
@@ -121,13 +122,15 @@ class HomeViewModel: ObservableObject{
             }
             
             do{
+                print("Response here")
                 let movieGenre = try JSONDecoder().decode(GenreModel.self, from: responseData)
+                print(movieGenre)
                 DispatchQueue.main.async {
                     self.fetchedMovieGenre = movieGenre
                 }
             }catch{
                 print("error: \(error.localizedDescription)")
             }
-        }
+        }.resume()
     }
 }

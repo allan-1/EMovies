@@ -28,7 +28,7 @@ struct Result: Codable {
     let mediaType: MediaType
     let adult: Bool
     let title: String?
-    let originalLanguage: OriginalLanguage
+    let originalLanguage: String
     let genreIDS: [Int]
     let popularity: Double
     let releaseDate: String?
@@ -69,4 +69,5 @@ enum OriginalLanguage: String, Codable {
     case de = "de"
     case en = "en"
     case ja = "ja"
+    case zh = "zh"
 }
