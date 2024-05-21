@@ -21,7 +21,7 @@ struct TrendingModel: Codable{
 
     // MARK: - Result
 struct Result: Codable {
-    let backdropPath: String
+    let backdropPath: String?
     let id: Int
     let originalTitle: String?
     let overview, posterPath: String
