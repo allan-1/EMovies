@@ -15,19 +15,35 @@ class HomeViewModel: ObservableObject{
     @Published var fetchedMovieGenre: GenreModel? = nil
     @Published var fetchedTvGenres: GenreModel? = nil
     
-    //MARK: - Get Trending Movies
-    func getTrending(){
-        let urlString = "https://api.themoviedb.org/3/trending/all/day?language=en-US"
+    //MARK: - Api request
+    func apiRequest(urlString: String) -> URLRequest{
+        let urlString = urlString
         
-        guard let apiUrl = URL(string: urlString) else{
-            print("invalid url")
-            return
-        }
+        let apiUrl = URL(string: urlString)
         
-        var request = URLRequest(url: apiUrl)
+        var request = URLRequest(url: apiUrl!)
         request.httpMethod = "GET"
         request.setValue("Bearer \(bearerToken)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        return request
+    }
+    
+    //MARK: - Get Trending Movies
+    func getTrending(){
+        
+        let request = apiRequest(urlString: "https://api.themoviedb.org/3/trending/all/day?language=en-US")
+//        let urlString = "https://api.themoviedb.org/3/trending/all/day?language=en-US"
+//        
+//        guard let apiUrl = URL(string: urlString) else{
+//            print("invalid url")
+//            return
+//        }
+//        
+//        var request = URLRequest(url: apiUrl)
+//        request.httpMethod = "GET"
+//        request.setValue("Bearer \(bearerToken)", forHTTPHeaderField: "Authorization")
+//        request.setValue("application/json", forHTTPHeaderField: "Accept")
         
         let session = URLSession(configuration: .default)
         
@@ -54,17 +70,19 @@ class HomeViewModel: ObservableObject{
     }
     
     func getPopular(){
-        let urlString = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1"
+        let request = apiRequest(urlString: "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1")
         
-        guard let apiUrl = URL(string: urlString) else{
-            print("Invalid url")
-            return
-        }
-        
-        var request = URLRequest(url: apiUrl)
-        request.httpMethod = "GET"
-        request.setValue("Bearer \(bearerToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+//        let urlString = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1"
+//        
+//        guard let apiUrl = URL(string: urlString) else{
+//            print("Invalid url")
+//            return
+//        }
+//        
+//        var request = URLRequest(url: apiUrl)
+//        request.httpMethod = "GET"
+//        request.setValue("Bearer \(bearerToken)", forHTTPHeaderField: "Authorization")
+//        request.setValue("application/json", forHTTPHeaderField: "Accept")
         
         let session = URLSession(configuration: .default)
         
@@ -92,18 +110,20 @@ class HomeViewModel: ObservableObject{
     
     func getMovieGenre(){
         
-        let urlString = "https://api.themoviedb.org/3/genre/movie/list?language=en"
+        let request = apiRequest(urlString: "https://api.themoviedb.org/3/genre/movie/list?language=en")
         
-        
-        guard let apiUrl = URL(string: urlString) else{
-            print("Invalid URL")
-            return
-        }
-        
-        var request = URLRequest(url: apiUrl)
-        request.httpMethod = "GET"
-        request.setValue("Bearer \(bearerToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+//        let urlString = "https://api.themoviedb.org/3/genre/movie/list?language=en"
+//        
+//        
+//        guard let apiUrl = URL(string: urlString) else{
+//            print("Invalid URL")
+//            return
+//        }
+//        
+//        var request = URLRequest(url: apiUrl)
+//        request.httpMethod = "GET"
+//        request.setValue("Bearer \(bearerToken)", forHTTPHeaderField: "Authorization")
+//        request.setValue("application/json", forHTTPHeaderField: "Accept")
         
         let session = URLSession(configuration: .default)
         
@@ -132,18 +152,20 @@ class HomeViewModel: ObservableObject{
     
     func getTvGenre(){
         
-        let urlString = "https://api.themoviedb.org/3/genre/tv/list?language=en"
+        let request = apiRequest(urlString: "https://api.themoviedb.org/3/genre/tv/list?language=en")
         
-        
-        guard let apiUrl = URL(string: urlString) else{
-            print("Invalid URL")
-            return
-        }
-        
-        var request = URLRequest(url: apiUrl)
-        request.httpMethod = "GET"
-        request.setValue("Bearer \(bearerToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+//        let urlString = "https://api.themoviedb.org/3/genre/tv/list?language=en"
+//        
+//        
+//        guard let apiUrl = URL(string: urlString) else{
+//            print("Invalid URL")
+//            return
+//        }
+//        
+//        var request = URLRequest(url: apiUrl)
+//        request.httpMethod = "GET"
+//        request.setValue("Bearer \(bearerToken)", forHTTPHeaderField: "Authorization")
+//        request.setValue("application/json", forHTTPHeaderField: "Accept")
         
         let session = URLSession(configuration: .default)
         
