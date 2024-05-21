@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA15B12A2BFC993A00A5AE20 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA15B1292BFC993A00A5AE20 /* MovieDetail.swift */; };
+		FA15B12D2BFCD2A300A5AE20 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA15B12C2BFCD2A300A5AE20 /* StarsView.swift */; };
+		FA15B12F2BFCD58300A5AE20 /* MovieMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA15B12E2BFCD58300A5AE20 /* MovieMetrics.swift */; };
+		FA15B1312BFCD8BC00A5AE20 /* GenreText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA15B1302BFCD8BC00A5AE20 /* GenreText.swift */; };
+		FA15B1332BFCDCF000A5AE20 /* DescTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA15B1322BFCDCF000A5AE20 /* DescTitles.swift */; };
+		FA15B1352BFCDE5400A5AE20 /* CastText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA15B1342BFCDE5400A5AE20 /* CastText.swift */; };
 		FA3047732BF20DC500FFCBBA /* TitleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3047722BF20DC500FFCBBA /* TitleText.swift */; };
 		FA3047752BF2182200FFCBBA /* MovieItemText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3047742BF2182200FFCBBA /* MovieItemText.swift */; };
 		FA3047772BF21C9300FFCBBA /* OverlayContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3047762BF21C9300FFCBBA /* OverlayContentView.swift */; };
@@ -31,6 +37,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA15B1292BFC993A00A5AE20 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		FA15B12C2BFCD2A300A5AE20 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
+		FA15B12E2BFCD58300A5AE20 /* MovieMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieMetrics.swift; sourceTree = "<group>"; };
+		FA15B1302BFCD8BC00A5AE20 /* GenreText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreText.swift; sourceTree = "<group>"; };
+		FA15B1322BFCDCF000A5AE20 /* DescTitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescTitles.swift; sourceTree = "<group>"; };
+		FA15B1342BFCDE5400A5AE20 /* CastText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastText.swift; sourceTree = "<group>"; };
 		FA3047722BF20DC500FFCBBA /* TitleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleText.swift; sourceTree = "<group>"; };
 		FA3047742BF2182200FFCBBA /* MovieItemText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItemText.swift; sourceTree = "<group>"; };
 		FA3047762BF21C9300FFCBBA /* OverlayContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +78,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA15B12B2BFC994700A5AE20 /* Movie Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FA15B12C2BFCD2A300A5AE20 /* StarsView.swift */,
+				FA15B12E2BFCD58300A5AE20 /* MovieMetrics.swift */,
+				FA15B1302BFCD8BC00A5AE20 /* GenreText.swift */,
+				FA15B1322BFCDCF000A5AE20 /* DescTitles.swift */,
+				FA15B1342BFCDE5400A5AE20 /* CastText.swift */,
+			);
+			path = "Movie Detail";
+			sourceTree = "<group>";
+		};
 		FA516D832BEBB8D9003E7C4A = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +156,7 @@
 				FA516DA42BEBBAD5003E7C4A /* MoviesView.swift */,
 				FA516DA62BEBBAEE003E7C4A /* TvView.swift */,
 				FA516DA82BEBBB3D003E7C4A /* TabsView.swift */,
+				FA15B1292BFC993A00A5AE20 /* MovieDetail.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,6 +164,7 @@
 		FA516DAA2BEBEACE003E7C4A /* components */ = {
 			isa = PBXGroup;
 			children = (
+				FA15B12B2BFC994700A5AE20 /* Movie Detail */,
 				FA516DAB2BEBEAF1003E7C4A /* SearchComponent.swift */,
 				FA3047722BF20DC500FFCBBA /* TitleText.swift */,
 				FA3047742BF2182200FFCBBA /* MovieItemText.swift */,
@@ -228,15 +254,21 @@
 				FA516DA92BEBBB3D003E7C4A /* TabsView.swift in Sources */,
 				FA3047732BF20DC500FFCBBA /* TitleText.swift in Sources */,
 				FA516DA52BEBBAD5003E7C4A /* MoviesView.swift in Sources */,
+				FA15B1332BFCDCF000A5AE20 /* DescTitles.swift in Sources */,
 				FA516DA32BEBBAB0003E7C4A /* HomeView.swift in Sources */,
 				FA516DAE2BEBEB9D003E7C4A /* HomeViewModel.swift in Sources */,
+				FA15B12F2BFCD58300A5AE20 /* MovieMetrics.swift in Sources */,
+				FA15B1312BFCD8BC00A5AE20 /* GenreText.swift in Sources */,
 				FA516D922BEBB8D9003E7C4A /* ContentView.swift in Sources */,
 				FA3047892BF3D45900FFCBBA /* GenreCell.swift in Sources */,
 				FA516DA72BEBBAEE003E7C4A /* TvView.swift in Sources */,
 				FA516D902BEBB8D9003E7C4A /* EMoviesApp.swift in Sources */,
 				FA3047772BF21C9300FFCBBA /* OverlayContentView.swift in Sources */,
+				FA15B12D2BFCD2A300A5AE20 /* StarsView.swift in Sources */,
 				FA30477C2BF2324700FFCBBA /* MovieItem.swift in Sources */,
 				FA3047852BF33FE400FFCBBA /* tokens.swift in Sources */,
+				FA15B12A2BFC993A00A5AE20 /* MovieDetail.swift in Sources */,
+				FA15B1352BFCDE5400A5AE20 /* CastText.swift in Sources */,
 				FA516DAC2BEBEAF1003E7C4A /* SearchComponent.swift in Sources */,
 				FA3047752BF2182200FFCBBA /* MovieItemText.swift in Sources */,
 				FA3047872BF3A3AB00FFCBBA /* GenreModel.swift in Sources */,

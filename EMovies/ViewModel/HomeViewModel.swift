@@ -32,7 +32,7 @@ class HomeViewModel: ObservableObject{
     
     //MARK: - Get Trending Movies
     func getTrending(){
-        let request = apiRequest(urlString: "https://api.themoviedb.org/3/trending/all/day?language=en-US")
+        let request = apiRequest(urlString: "https://api.themoviedb.org/3/trending/movie/day?language=en-US")
         
         let session = URLSession(configuration: .default)
         
@@ -149,7 +149,7 @@ class HomeViewModel: ObservableObject{
         
         session.dataTask(with: request){
             (data, response, error) in
-            if let error = error{
+            if error != nil{
                 print("No data recieved")
                 return
             }
@@ -164,7 +164,7 @@ class HomeViewModel: ObservableObject{
                     self.fetchedMovieDetails = movieDetails
                 }
             }catch{
-                print("error: \(error.localizedDescription)")
+                print("error: \(error)")
             }
         }.resume()
     }
