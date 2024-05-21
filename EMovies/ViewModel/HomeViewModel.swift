@@ -14,6 +14,7 @@ class HomeViewModel: ObservableObject{
     @Published var fetchedPopular: PopularModel? = nil
     @Published var fetchedMovieGenre: GenreModel? = nil
     @Published var fetchedTvGenres: GenreModel? = nil
+    @Published var fetchedMovieDetails: MovieDetailsModel? = nil
     
     //MARK: - Api request
     func apiRequest(urlString: String) -> URLRequest{
@@ -31,19 +32,7 @@ class HomeViewModel: ObservableObject{
     
     //MARK: - Get Trending Movies
     func getTrending(){
-        
         let request = apiRequest(urlString: "https://api.themoviedb.org/3/trending/all/day?language=en-US")
-//        let urlString = "https://api.themoviedb.org/3/trending/all/day?language=en-US"
-//        
-//        guard let apiUrl = URL(string: urlString) else{
-//            print("invalid url")
-//            return
-//        }
-//        
-//        var request = URLRequest(url: apiUrl)
-//        request.httpMethod = "GET"
-//        request.setValue("Bearer \(bearerToken)", forHTTPHeaderField: "Authorization")
-//        request.setValue("application/json", forHTTPHeaderField: "Accept")
         
         let session = URLSession(configuration: .default)
         
@@ -71,18 +60,6 @@ class HomeViewModel: ObservableObject{
     
     func getPopular(){
         let request = apiRequest(urlString: "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1")
-        
-//        let urlString = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1"
-//        
-//        guard let apiUrl = URL(string: urlString) else{
-//            print("Invalid url")
-//            return
-//        }
-//        
-//        var request = URLRequest(url: apiUrl)
-//        request.httpMethod = "GET"
-//        request.setValue("Bearer \(bearerToken)", forHTTPHeaderField: "Authorization")
-//        request.setValue("application/json", forHTTPHeaderField: "Accept")
         
         let session = URLSession(configuration: .default)
         
@@ -112,19 +89,6 @@ class HomeViewModel: ObservableObject{
         
         let request = apiRequest(urlString: "https://api.themoviedb.org/3/genre/movie/list?language=en")
         
-//        let urlString = "https://api.themoviedb.org/3/genre/movie/list?language=en"
-//        
-//        
-//        guard let apiUrl = URL(string: urlString) else{
-//            print("Invalid URL")
-//            return
-//        }
-//        
-//        var request = URLRequest(url: apiUrl)
-//        request.httpMethod = "GET"
-//        request.setValue("Bearer \(bearerToken)", forHTTPHeaderField: "Authorization")
-//        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        
         let session = URLSession(configuration: .default)
         
         session.dataTask(with: request){
@@ -151,21 +115,7 @@ class HomeViewModel: ObservableObject{
     }
     
     func getTvGenre(){
-        
         let request = apiRequest(urlString: "https://api.themoviedb.org/3/genre/tv/list?language=en")
-        
-//        let urlString = "https://api.themoviedb.org/3/genre/tv/list?language=en"
-//        
-//        
-//        guard let apiUrl = URL(string: urlString) else{
-//            print("Invalid URL")
-//            return
-//        }
-//        
-//        var request = URLRequest(url: apiUrl)
-//        request.httpMethod = "GET"
-//        request.setValue("Bearer \(bearerToken)", forHTTPHeaderField: "Authorization")
-//        request.setValue("application/json", forHTTPHeaderField: "Accept")
         
         let session = URLSession(configuration: .default)
         
@@ -185,6 +135,33 @@ class HomeViewModel: ObservableObject{
                 let tvGenre = try JSONDecoder().decode(GenreModel.self, from: responseData)
                 DispatchQueue.main.async {
                     self.fetchedTvGenres = tvGenre
+                }
+            }catch{
+                print("error: \(error.localizedDescription)")
+            }
+        }.resume()
+    }
+    
+    func getMovieDetails(movieId: Int){
+        let request = apiRequest(urlString: "https://api.themoviedb.org/3/movie/\(movieId)?language=en-US")
+        
+        let session = URLSession(configuration: .default)
+        
+        session.dataTask(with: request){
+            (data, response, error) in
+            if let error = error{
+                print("No data recieved")
+                return
+            }
+            
+            guard let responseData = data else{
+                print("No data recieved")
+                return
+            }
+            do{
+                let movieDetails = try JSONDecoder().decode(MovieDetailsModel.self, from: responseData)
+                DispatchQueue.main.async {
+                    self.fetchedMovieDetails = movieDetails
                 }
             }catch{
                 print("error: \(error.localizedDescription)")
