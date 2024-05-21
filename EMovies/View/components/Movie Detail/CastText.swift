@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CastText: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Shaleen").padding(.all, 8).border(.gray).fontWeight(.medium).clipShape(.rect(cornerRadius: 8))
     }
 }
 
