@@ -34,6 +34,7 @@
 		FA516DA92BEBBB3D003E7C4A /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA516DA82BEBBB3D003E7C4A /* TabsView.swift */; };
 		FA516DAC2BEBEAF1003E7C4A /* SearchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA516DAB2BEBEAF1003E7C4A /* SearchComponent.swift */; };
 		FA516DAE2BEBEB9D003E7C4A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA516DAD2BEBEB9D003E7C4A /* HomeViewModel.swift */; };
+		FA7798FB2C04D2D2009B5594 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7798FA2C04D2D2009B5594 /* MovieListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		FA516DA82BEBBB3D003E7C4A /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		FA516DAB2BEBEAF1003E7C4A /* SearchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchComponent.swift; sourceTree = "<group>"; };
 		FA516DAD2BEBEB9D003E7C4A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FA7798FA2C04D2D2009B5594 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				FA516DA62BEBBAEE003E7C4A /* TvView.swift */,
 				FA516DA82BEBBB3D003E7C4A /* TabsView.swift */,
 				FA15B1292BFC993A00A5AE20 /* MovieDetail.swift */,
+				FA7798FA2C04D2D2009B5594 /* MovieListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				FA3047892BF3D45900FFCBBA /* GenreCell.swift in Sources */,
 				FA516DA72BEBBAEE003E7C4A /* TvView.swift in Sources */,
 				FA516D902BEBB8D9003E7C4A /* EMoviesApp.swift in Sources */,
+				FA7798FB2C04D2D2009B5594 /* MovieListView.swift in Sources */,
 				FA3047772BF21C9300FFCBBA /* OverlayContentView.swift in Sources */,
 				FA15B12D2BFCD2A300A5AE20 /* StarsView.swift in Sources */,
 				FA30477C2BF2324700FFCBBA /* MovieItem.swift in Sources */,
