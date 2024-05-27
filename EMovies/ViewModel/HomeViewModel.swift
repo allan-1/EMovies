@@ -15,6 +15,7 @@ class HomeViewModel: ObservableObject{
     @Published var fetchedMovieGenre: GenreModel? = nil
     @Published var fetchedTvGenres: GenreModel? = nil
     @Published var fetchedMovieDetails: MovieDetailsModel? = nil
+    @Published var fetchedMoviesByGenre: PopularModel? = nil
     
     //MARK: - Api request
     func apiRequest(urlString: String) -> URLRequest{
@@ -166,6 +167,33 @@ class HomeViewModel: ObservableObject{
             }catch{
                 print("error: \(error)")
             }
+        }.resume()
+    }
+    
+    func getMovieListByGenre(genreId: Int){
+        let request = apiRequest(urlString: "https://api.themoviedb.org/3/discover/movie?with_genres=\(genreId)")
+        
+        let session = URLSession(configuration: .default)
+        
+        session.dataTask(with: request){
+            (data, response, error) in
+                if error != nil{
+                    print("No data receieved")
+                    return
+                }
+                guard let responseData = data else{
+                    print("No data recieved")
+                    return
+                }
+            do{
+                let movieList = try JSONDecoder().decode(PopularModel.self, from: responseData)
+                DispatchQueue.main.async{
+                    self.fetchedMoviesByGenre = movieList
+                }
+            }catch{
+                print(error)
+            }
+            
         }.resume()
     }
 }
